@@ -1,4 +1,4 @@
-# TypingFastGame
+# TypingFastGame 🎮
 
 ## Introduction
   * Creation Period: 2021-08-20~10-31
