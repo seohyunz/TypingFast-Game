@@ -6,7 +6,7 @@
   * A mini-typing game where you quickly enter the displayed characters
 ***
 ### ⁘Main Screen
-![타이핑메인](https://user-images.githubusercontent.com/99002828/162569221-800ef577-e1d6-486e-8d36-5857ab7514cd.png)
+![image](https://user-images.githubusercontent.com/99002828/162569344-67a9bb73-850e-4fe6-95a5-4c7f121e166a.png)
 
 Shows the start, method, and end buttons.
 
@@ -16,16 +16,16 @@ Shows the start, method, and end buttons.
 
 
 ### ⁘How to play
-![타이핑방법](https://user-images.githubusercontent.com/99002828/162569228-f2b60fa4-296a-4844-a80d-6abd43a51d5d.png)
+![image](https://user-images.githubusercontent.com/99002828/162569352-5f422f7f-7107-4c6a-a54b-c92de6cecdd5.png)
 
 Instructions on how to play, press the space bar to return to the main page
 
 ### ⁘InGame
-![타이핑인게임](https://user-images.githubusercontent.com/99002828/162569233-6980bdeb-8a12-4820-854e-708531d07cf5.png)
+![image](https://user-images.githubusercontent.com/99002828/162569372-db8b8583-30b3-4c33-91f1-9be4022478a8.png)
 
 Game problem output, player life, correct and incorrect answer output Game difficulty increase output when a certain score is exceeded
 
 ### ⁘Game Over
-![게임오버](https://user-images.githubusercontent.com/99002828/162569238-a528979d-ab11-4e20-8c4e-4d77b196a784.png)
+![image](https://user-images.githubusercontent.com/99002828/162569386-6daf6535-bc54-4807-bd8a-8c4ae3a36f8f.png)
 
 Experience game podcasts, player fires, natural disasters, and game bars.
