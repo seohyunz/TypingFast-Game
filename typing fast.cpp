@@ -353,6 +353,7 @@ void moveww() { //제목 그리기
 }
 
 int main() {
+	system(" mode  con lines=25   cols=73 ");
 	SetGameView();
 	Sound();
 	moveww();
