@@ -10,7 +10,7 @@
 
 Shows the start, method, and end buttons.
 
-![ezgif com-gif-maker (1) (2)](https://user-images.githubusercontent.com/99002828/162569223-0cb61f78-95b8-422d-b6f2-22f206e8ad0d.gif)
+![ezgif com-gif-maker (1) (1)](https://user-images.githubusercontent.com/99002828/162569259-a6f842ea-a90e-4592-8c48-b72b489231cc.gif)
 
 'TypingFastGame'  output in alphabetical order
 
