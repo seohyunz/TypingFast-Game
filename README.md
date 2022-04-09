@@ -9,6 +9,7 @@
 ![타이핑메인](https://user-images.githubusercontent.com/99002828/162569221-800ef577-e1d6-486e-8d36-5857ab7514cd.png)
 
 Shows the start, method, and end buttons.
+
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/99002828/162569283-258729ba-466c-437d-b7aa-4423c46e8686.gif)
 
 'TypingFastGame'  output in alphabetical order
