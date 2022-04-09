@@ -5,6 +5,7 @@
   * Component: Language C++
   * A mini-typing game where you quickly enter the displayed characters
 ***
+
 ### ⁘Main Screen
 ![image](https://user-images.githubusercontent.com/99002828/162569344-67a9bb73-850e-4fe6-95a5-4c7f121e166a.png)
 
