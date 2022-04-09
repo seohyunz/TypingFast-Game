@@ -6,9 +6,11 @@
   * A mini-typing game where you quickly enter the displayed characters
 ***
 ### ⁘Main Screen
-![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/99002828/162569059-4edf56c6-1d3a-4508-9171-d890e0c2debd.gif)
-
+![타이핑메인](https://user-images.githubusercontent.com/99002828/162569131-556d1ffa-c517-4204-bedc-12ab6d534904.png)
 Shows the start, method, and end buttons.
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/99002828/162569059-4edf56c6-1d3a-4508-9171-d890e0c2debd.gif)
+'TypingFastGame'  output in alphabetical order
+
 
 ### ⁘How to play
 ![타이핑방법](https://user-images.githubusercontent.com/99002828/162567946-fd23d7f3-7972-4e97-829f-7692cde233a0.png)
