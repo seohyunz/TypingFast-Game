@@ -5,7 +5,7 @@
 #include <Windows.h>
 #include <conio.h>
 #include<string.h>
-#pragma comment(lib,"winmm.lib") //사운드 
+#pragma comment(lib,"winmm.lib") 
 using namespace std;
 #define MAGIC_KEY 224
 #define SPACE 32
@@ -20,15 +20,11 @@ typedef struct xy {
 	int y;
 	int con;
 }Enemy;
-
 Enemy enemy[WIDTH];
-
 int score = 0;
-
 
 void Sound() {
 	PlaySound(TEXT("sky.wav"), 0, SND_FILENAME | SND_ASYNC | SND_LOOP);
-	
 }
 void Sound2() { //인게임브금
 	PlaySound(TEXT("dusr.wav"), 0, SND_FILENAME | SND_ASYNC | SND_LOOP);
@@ -88,16 +84,10 @@ int getFontColor() {
 __inline void resetFontColor() {
 	setFontColor(7);
 }
-
-
 void SetGameView() {
 	system("tiTle TYPING FAST!!");
 }
-
-
-void DrawtitleVie() {
-	system("cls");
-	
+void DrawtitleLinie() {
 	int i;
 	printf("%c%c", 0xA6, 0xAE);
 	for (i = 0; i < 70; i++) { printf("%c%c", 0xA6, 0xAC); }
@@ -107,9 +97,11 @@ void DrawtitleVie() {
 	printf("%c%c", 0xA6, 0xb1);
 	for (i = 0; i < 70; i++) { printf("%c%c", 0xA6, 0xAC); }
 	printf("%c%c\n", 0xA6, 0xb0);
-	
+}
+void DrawtitleVie() { //게임메뉴
+	system("cls");
+	DrawtitleLinie();
 	setFontColor(CC_CYAN);
-	
 	gotoxy(10, 6);
 	cout << "        TYPING FAST GAME       " << endl;
 	resetFontColor();
@@ -119,22 +111,11 @@ void DrawtitleVie() {
 	cout << "게임방법\n";
 	gotoxy(16, 14);
 	cout << "  종료\n";
-
 }
 
-
-
-void DrawInfoGame() {
+void DrawInfoGame() { //게임방법
 	system("cls");
-	int i;
-	printf("%c%c", 0xA6, 0xAE);
-	for (i = 0; i < 70; i++) { printf("%c%c", 0xA6, 0xAC); }
-	printf("%c%c\n", 0xA6, 0xAF);
-	cout << endl << endl;
-	for (i = 0; i < 20; i++) { printf("%c%c%71c%c\n", 0xA6, 0xAD, 0xA6, 0xAD); }
-	printf("%c%c", 0xA6, 0xb1);
-	for (i = 0; i < 70; i++) { printf("%c%c", 0xA6, 0xAC); }
-	printf("%c%c\n", 0xA6, 0xb0);
+	DrawtitleLinie();
 	gotoxy(8, 5);
 	cout << " 보여지는 문자를 차례대로 빨리 입력하는 게임";
 	gotoxy(8, 7);
@@ -153,8 +134,6 @@ void DrawInfoGame() {
 	cout << " ENTER를 누르면 채점됩니다." << endl;
 	gotoxy(8, 18);
 	cout << " 목숨은 총 3개 입니다." << endl;
-	
-	
 	setFontColor(CC_YELLOW);
 	gotoxy(5, 21);
 	cout << "P또는 p를 입력하면 게임이 종료되고,"
@@ -173,8 +152,7 @@ void DrawCusor(int& y) {
 	if (y <= 0) { y = 0; }
 	else if (y >= 2) { y = 2; }
 	gotoxy(14, 12+y);
-	cout << ">>";
-	
+	cout << ">>";	
 }
 NENU ReadyGame() {
 	int y = 0;
@@ -199,7 +177,6 @@ NENU ReadyGame() {
 				return GAMESTART;
 			case 1:
 				return INFO;
-			
 			case 2:
 				return QUIT;
 			}
@@ -207,18 +184,10 @@ NENU ReadyGame() {
 	}
 }
 
-void DrawGameOver(int score, int time) {
+void DrawGameOver(int score, int time) { //게임오버
 	system("cls");
 	resetFontColor();
-	int i;
-	printf("%c%c", 0xA6, 0xAE);
-	for (i = 0; i < 70; i++) { printf("%c%c", 0xA6, 0xAC); }
-	printf("%c%c\n", 0xA6, 0xAF);
-	cout << endl << endl;
-	for (i = 0; i < 20; i++) { printf("%c%c%71c%c\n", 0xA6, 0xAD, 0xA6, 0xAD); }
-	printf("%c%c", 0xA6, 0xb1);
-	for (i = 0; i < 70; i++) { printf("%c%c", 0xA6, 0xAC); }
-	printf("%c%c\n", 0xA6, 0xb0);
+	DrawtitleLinie();
 	gotoxy(10, 5);
 	Gamebeep();
 	Gamebeep();
@@ -234,7 +203,6 @@ void DrawGameOver(int score, int time) {
 	gotoxy(15, 22);
 	cout << "SPACE를 누르면 메인으로 돌아갑니다...";
 	resetFontColor();
-
 	while (1) {
 		int n = _getch();
 		if (n == 32) {
@@ -242,12 +210,10 @@ void DrawGameOver(int score, int time) {
 			return;
 		}
 	}
-
 }
 
-void playGame(int life, int score) {
+void playGame(int life, int score) { //인게임
 	system("cls");
-	
 	int n = 3;
 	int i;
 	setFontColor(CC_ORIGINALFONT);
@@ -264,9 +230,7 @@ void playGame(int life, int score) {
 	double ch;
 	start = time(NULL);
 	
-	
 	while (true) {
-		
 		gotoxy(7, 5);
 		cout << " 점 수: " <<score;
 		switch (life) {
@@ -284,21 +248,19 @@ void playGame(int life, int score) {
 		char Qword[8] = { 'w','s','a','d','w','s','a','d' };
 		char Qword2[8] = { 'w','s','a','d','W','S','A','D' };
 		char Qword3[11] = { 'w','s','a','d','W','S','A','D','1','2','3' };
-		 
-		
 		char* pNums;
 		char num;
 		char ok;
-
 		int i;
 		srand((unsigned)time(NULL));
 		pNums = (char*)malloc(sizeof(char) * n);
+		//malloc 배열을 이용하여 문제의 길이와 플레이어가 쓴 답의 길이를 비교
 
 		for (i = 0; i < n; ++i) {
 			int ra = rand() % 8;
 			int ra2 = rand() % 11;
-			pNums[i] = Qword[ra];
-			if (score > 60) {
+			pNums[i] = Qword[ra]; //랜덤으로 문자를 넣음
+			if (score > 60) { 
 				pNums[i] = Qword2[ra];
 			}
 			if (score > 110) {
@@ -317,6 +279,7 @@ void playGame(int life, int score) {
 			cout << "게임 난이도↑↑↑";
 			resetFontColor();
 		}
+
 		setFontColor(CC_YELLOW);
 		gotoxy(7, 7);
 		cout<<"───────────────────────────────────────────";
@@ -331,9 +294,10 @@ void playGame(int life, int score) {
 		gotoxy(14, 15);
 		cout << "-->                                        ";
 		gotoxy(16, 15);
-		for (i = 0; i < n; ++i){
+
+		for (i = 0; i < n; ++i){//배열에 들어있는 문자와 사용자가 쓴 문자를 비교함
 			cin >> num;
-			if (num != pNums[i]) {
+			if (num != pNums[i]) { 
 				ok = false;
 				if (num == 'p' || num == 'P') {
 					setFontColor(CC_YELLOW);
@@ -345,10 +309,9 @@ void playGame(int life, int score) {
 					Sound();
 					return;
 				}
-			}
-				
+			}			
 		}
-		if (!ok) {
+		if (!ok) { //오답일시
 			Gamebeep();
 			gotoxy(26, 19);
 			setFontColor(CC_RED);
@@ -360,12 +323,10 @@ void playGame(int life, int score) {
 				finish = time(NULL);
 				ch = (double)(finish - start);
 				DrawGameOver(score, ch);
-				//DrawtitleVie();
 				return;
-			}
-			
+			}	
 		}
-		else if (ok == true) {
+		else if (ok == true) { //정답일시
 			gotoxy(26, 19);
 			setFontColor(CC_GREEN);
 			cout<<"true         ";
@@ -375,22 +336,12 @@ void playGame(int life, int score) {
 				n = 20;	
 		}
 		resetFontColor();
-		free(pNums);
-		
+		free(pNums);	
 	}
-
 }
 
-void moveww() {
-	int i;
-	printf("%c%c", 0xA6, 0xAE);
-	for (i = 0; i < 70; i++) { printf("%c%c", 0xA6, 0xAC); }
-	printf("%c%c\n", 0xA6, 0xAF);
-	cout << endl << endl;
-	for (i = 0; i < 20; i++) { printf("%c%c%71c%c\n", 0xA6, 0xAD, 0xA6, 0xAD); }
-	printf("%c%c", 0xA6, 0xb1);
-	for (i = 0; i < 70; i++) { printf("%c%c", 0xA6, 0xAC); }
-	printf("%c%c\n", 0xA6, 0xb0);
+void moveww() { //제목 그리기
+	DrawtitleLinie();
 	setFontColor(CC_CYAN);
 	char Re[] = { '  T','Y','P','I','N','G',' ', 'F','A','S','T', ' ' ,'G','A','M','E' };
 	gotoxy(14, 6);
@@ -402,12 +353,10 @@ void moveww() {
 }
 
 int main() {
-	//fullscreen();
 	SetGameView();
 	Sound();
 	moveww();
-	while (1) {
-		
+	while (1) {	
 		switch (ReadyGame()) {
 		case GAMESTART:
 			Sound2();
@@ -418,13 +367,8 @@ int main() {
 			break;
 		case QUIT:
 			return 0;
-
-		}
-	 
+		} 
 	}
-	
-
 	return 0;
-
 }
 
