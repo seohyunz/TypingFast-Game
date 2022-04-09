@@ -6,7 +6,7 @@
   * A mini-typing game where you quickly enter the displayed characters
 ***
 ### ⁘Main Screen
-![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/99002828/162569019-12cfeffd-01b8-478c-bb64-516a2b231bf8.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/99002828/162569059-4edf56c6-1d3a-4508-9171-d890e0c2debd.gif)
 
 Shows the start, method, and end buttons.
 
