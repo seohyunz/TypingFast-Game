@@ -26,7 +26,7 @@ int score = 0;
 void Sound() {
 	PlaySound(TEXT("sky.wav"), 0, SND_FILENAME | SND_ASYNC | SND_LOOP);
 }
-void Sound2() { //ÀÎ°ÔÀÓºê±İ
+void Sound2() { //ì¸ê²Œì„ë…¸ë˜
 	PlaySound(TEXT("dusr.wav"), 0, SND_FILENAME | SND_ASYNC | SND_LOOP);
 }
 enum ConsolColor {
@@ -59,13 +59,13 @@ void init() {
 enum NENU {
 	GAMESTART = 0, INFO, QUIT, IING
 };
-enum KEYBOARD { //¹æÇâÅ° ¾Æ½ºÅ°ÄÚµå
+enum KEYBOARD { //ë°©í–¥í‚¤ ì•„ìŠ¤í‚¤ì½”ë“œ
 	UP = 72, LEFT = 75, RIGHT = 77, DOWN = 80
 };
 void Gamebeep() {
 	Beep(1000, 200);
 }
-void gotoxy(int x, int y) {
+void gotoxy(int x, int y) { //í™”ì‚´í‘œë¥¼ ìœ„í•œ x,yì¢Œí‘œ
 	COORD pos;
 	pos.X = 2 * x;
 	pos.Y = y;
@@ -87,7 +87,7 @@ __inline void resetFontColor() {
 void SetGameView() {
 	system("tiTle TYPING FAST!!");
 }
-void DrawtitleLinie() {
+void DrawtitleLinie() { //í™”ë©´(ê²Œì„ë°•ìŠ¤)ì„ ê·¸ë¦¬ê¸° ìœ„í•œ í•¨ìˆ˜
 	int i;
 	printf("%c%c", 0xA6, 0xAE);
 	for (i = 0; i < 70; i++) { printf("%c%c", 0xA6, 0xAC); }
@@ -98,7 +98,7 @@ void DrawtitleLinie() {
 	for (i = 0; i < 70; i++) { printf("%c%c", 0xA6, 0xAC); }
 	printf("%c%c\n", 0xA6, 0xb0);
 }
-void DrawtitleVie() { //°ÔÀÓ¸Ş´º
+void DrawtitleVie() { //ê²Œì„ë©”ë‰´
 	system("cls");
 	DrawtitleLinie();
 	setFontColor(CC_CYAN);
@@ -106,40 +106,40 @@ void DrawtitleVie() { //°ÔÀÓ¸Ş´º
 	cout << "        TYPING FAST GAME       " << endl;
 	resetFontColor();
 	gotoxy(16, 12);
-	cout << "°ÔÀÓ½ÃÀÛ\n";
+	cout << "ê²Œì„ì‹œì‘\n";
 	gotoxy(16, 13);
-	cout << "°ÔÀÓ¹æ¹ı\n";
+	cout << "ê²Œì„ë°©ë²•\n";
 	gotoxy(16, 14);
-	cout << "  Á¾·á\n";
+	cout << "  ì¢…ë£Œ\n";
 }
 
-void DrawInfoGame() { //°ÔÀÓ¹æ¹ı
+void DrawInfoGame() { //ê²Œì„ë°©ë²•
 	system("cls");
 	DrawtitleLinie();
 	gotoxy(8, 5);
-	cout << " º¸¿©Áö´Â ¹®ÀÚ¸¦ Â÷·Ê´ë·Î »¡¸® ÀÔ·ÂÇÏ´Â °ÔÀÓ";
+	cout << " ë³´ì—¬ì§€ëŠ” ë¬¸ìë¥¼ ì°¨ë¡€ëŒ€ë¡œ ë¹¨ë¦¬ ì…ë ¥í•˜ëŠ” ê²Œì„";
 	gotoxy(8, 7);
-	cout << " Å°º¸µå·Î ÇØ´çµÈ ¹®ÀÚ ÀÔ·Â";
+	cout << " í‚¤ë³´ë“œë¡œ í•´ë‹¹ëœ ë¬¸ì ì…ë ¥";
 	gotoxy(8, 9);
-	cout << " Á¤´ä  +10 Á¡       ¿À´ä  -3 Á¡";
+	cout << " ì •ë‹µ  +10 ì        ì˜¤ë‹µ  -3 ì ";
 	gotoxy(8, 11);
-	cout << "*³­ÀÌµµ´Â ÃÑ3´Ü°è·Î Á¡¼ö¿¡ µû¶ó ¿Ã¶ó°©´Ï´Ù.*";
+	cout << "*ë‚œì´ë„ëŠ” ì´3ë‹¨ê³„ë¡œ ì ìˆ˜ì— ë”°ë¼ ì˜¬ë¼ê°‘ë‹ˆë‹¤.*";
 	gotoxy(8, 13);
-	cout << " 0~60     1´Ü°è";
+	cout << " 0~60     1ë‹¨ê³„";
 	gotoxy(8, 14);
-	cout << " 60~110   2´Ü°è";
+	cout << " 60~110   2ë‹¨ê³„";
 	gotoxy(8, 15);
-	cout << " 110~     3´Ü°è";
+	cout << " 110~     3ë‹¨ê³„";
 	gotoxy(8, 17);
-	cout << " ENTER¸¦ ´©¸£¸é Ã¤Á¡µË´Ï´Ù." << endl;
+	cout << " ENTERë¥¼ ëˆ„ë¥´ë©´ ì±„ì ë©ë‹ˆë‹¤." << endl;
 	gotoxy(8, 18);
-	cout << " ¸ñ¼ûÀº ÃÑ 3°³ ÀÔ´Ï´Ù." << endl;
+	cout << " ëª©ìˆ¨ì€ ì´ 3ê°œ ì…ë‹ˆë‹¤." << endl;
 	setFontColor(CC_YELLOW);
 	gotoxy(5, 21);
-	cout << "P¶Ç´Â p¸¦ ÀÔ·ÂÇÏ¸é °ÔÀÓÀÌ Á¾·áµÇ°í,"
-		" ¸ŞÀÎÈ­¸éÀ¸·Î µ¹¾Æ°©´Ï´Ù.";
+	cout << "Pë˜ëŠ” pë¥¼ ì…ë ¥í•˜ë©´ ê²Œì„ì´ ì¢…ë£Œë˜ê³ ,"
+		" ë©”ì¸í™”ë©´ìœ¼ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.";
 	gotoxy(15, 22);
-	cout << "SPACE¸¦ ´©¸£¸é ¸ŞÀÎÀ¸·Î µ¹¾Æ°©´Ï´Ù...";
+	cout << "SPACEë¥¼ ëˆ„ë¥´ë©´ ë©”ì¸ìœ¼ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤...";
 	resetFontColor();
 	while (1) {
 		int n = _getch();
@@ -148,7 +148,7 @@ void DrawInfoGame() { //°ÔÀÓ¹æ¹ı
 		}
 	}
 }
-void DrawCusor(int& y) {
+void DrawCusor(int& y) { //
 	if (y <= 0) { y = 0; }
 	else if (y >= 2) { y = 2; }
 	gotoxy(14, 12+y);
@@ -184,7 +184,7 @@ NENU ReadyGame() {
 	}
 }
 
-void DrawGameOver(int score, int time) { //°ÔÀÓ¿À¹ö
+void DrawGameOver(int score, int time) { //ê²Œì„ì˜¤ë²„
 	system("cls");
 	resetFontColor();
 	DrawtitleLinie();
@@ -196,12 +196,12 @@ void DrawGameOver(int score, int time) { //°ÔÀÓ¿À¹ö
 	cout << "Game Over" << endl;
 	resetFontColor();
 	gotoxy(10, 12);
-	cout << "ÇÃ·¹ÀÌ ½Ã°£ : " << time << "ÃÊ";
+	cout << "í”Œë ˆì´ ì‹œê°„ : " << time << "ì´ˆ";
 	gotoxy(10, 14);
-	cout << "Á¡ ¼ö : " << score;
+	cout << "ì  ìˆ˜ : " << score;
 	setFontColor(CC_YELLOW);
 	gotoxy(15, 22);
-	cout << "SPACE¸¦ ´©¸£¸é ¸ŞÀÎÀ¸·Î µ¹¾Æ°©´Ï´Ù...";
+	cout << "SPACEë¥¼ ëˆ„ë¥´ë©´ ë©”ì¸ìœ¼ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤...";
 	resetFontColor();
 	while (1) {
 		int n = _getch();
@@ -212,7 +212,7 @@ void DrawGameOver(int score, int time) { //°ÔÀÓ¿À¹ö
 	}
 }
 
-void playGame(int life, int score) { //ÀÎ°ÔÀÓ
+void playGame(int life, int score) { //ì¸ê²Œì„
 	system("cls");
 	int n = 3;
 	int i;
@@ -220,7 +220,7 @@ void playGame(int life, int score) { //ÀÎ°ÔÀÓ
 	printf("%c%c", 0xA6, 0xAE);
 	for (i = 0; i < 70; i++) { printf("%c%c", 0xA6, 0xAC); }
 	printf("%c%c\n", 0xA6, 0xAF);
-	cout << "  ¼ø¼­´ë·Î ÀÔ·Â"<<endl << endl;
+	cout << "  ìˆœì„œëŒ€ë¡œ ì…ë ¥"<<endl << endl;
 	for (i = 0; i < 20; i++) { printf("%c%c%71c%c\n", 0xA6, 0xAD, 0xA6, 0xAD); }
 	printf("%c%c", 0xA6, 0xb1);
 	for (i = 0; i < 70; i++) { printf("%c%c", 0xA6, 0xAC); }
@@ -232,7 +232,7 @@ void playGame(int life, int score) { //ÀÎ°ÔÀÓ
 	
 	while (true) {
 		gotoxy(7, 5);
-		cout << " Á¡ ¼ö: " <<score;
+		cout << " ì  ìˆ˜: " <<score;
 		switch (life) {
 		case 3:
 			gotoxy(27, 5);
@@ -254,12 +254,12 @@ void playGame(int life, int score) { //ÀÎ°ÔÀÓ
 		int i;
 		srand((unsigned)time(NULL));
 		pNums = (char*)malloc(sizeof(char) * n);
-		//malloc ¹è¿­À» ÀÌ¿ëÇÏ¿© ¹®Á¦ÀÇ ±æÀÌ¿Í ÇÃ·¹ÀÌ¾î°¡ ¾´ ´äÀÇ ±æÀÌ¸¦ ºñ±³
+		//malloc ë°°ì—´ì„ ì´ìš©í•˜ì—¬ ë¬¸ì œì˜ ê¸¸ì´ì™€ í”Œë ˆì´ì–´ê°€ ì“´ ë‹µì˜ ê¸¸ì´ë¥¼ ë¹„êµ
 
 		for (i = 0; i < n; ++i) {
 			int ra = rand() % 8;
 			int ra2 = rand() % 11;
-			pNums[i] = Qword[ra]; //·£´ıÀ¸·Î ¹®ÀÚ¸¦ ³ÖÀ½
+			pNums[i] = Qword[ra]; //ëœë¤ìœ¼ë¡œ ë¬¸ìë¥¼ ë„£ìŒ
 			if (score > 60) { 
 				pNums[i] = Qword2[ra];
 			}
@@ -270,21 +270,21 @@ void playGame(int life, int score) { //ÀÎ°ÔÀÓ
 		if (score > 60) {
 			setFontColor(CC_BLUE);
 			gotoxy(3, 19);
-			cout << "°ÔÀÓ ³­ÀÌµµ¡è¡è";
+			cout << "ê²Œì„ ë‚œì´ë„â†‘â†‘";
 			resetFontColor();
 		}
 		if (score > 110) {
 			setFontColor(CC_MAGENTA);
 			gotoxy(3, 19);
-			cout << "°ÔÀÓ ³­ÀÌµµ¡è¡è¡è";
+			cout << "ê²Œì„ ë‚œì´ë„â†‘â†‘â†‘";
 			resetFontColor();
 		}
 
 		setFontColor(CC_YELLOW);
 		gotoxy(7, 7);
-		cout<<"¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡";
+		cout<<"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€";
 		gotoxy(7, 11);
-		cout << "¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡";
+		cout << "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€";
 		resetFontColor();
 		gotoxy(13, 9);
 		for (i = 0; i < n; ++i) {
@@ -295,14 +295,14 @@ void playGame(int life, int score) { //ÀÎ°ÔÀÓ
 		cout << "-->                                        ";
 		gotoxy(16, 15);
 
-		for (i = 0; i < n; ++i){//¹è¿­¿¡ µé¾îÀÖ´Â ¹®ÀÚ¿Í »ç¿ëÀÚ°¡ ¾´ ¹®ÀÚ¸¦ ºñ±³ÇÔ
+		for (i = 0; i < n; ++i){//ë°°ì—´ì— ë“¤ì–´ìˆëŠ” ë¬¸ìì™€ ì‚¬ìš©ìê°€ ì“´ ë¬¸ìë¥¼ ë¹„êµí•¨
 			cin >> num;
 			if (num != pNums[i]) { 
 				ok = false;
-				if (num == 'p' || num == 'P') {
+				if (num == 'p' || num == 'P') { //p ë˜ëŠ” Pë¥¼ ë…¸ë¥´ë©´ ê²Œì„ê°•ì œì¢…ë£Œ -> ë©”ì¸ìœ¼ë¡œ ëŒì•„ê°
 					setFontColor(CC_YELLOW);
 					gotoxy(15, 18);
-					cout << "°ÔÀÓ ÁÕ·á!! ¸ŞÀÎÈ­¸éÀ¸·Î µ¹¾Æ°©´Ï´Ù.";
+					cout << "ê²Œì„ ì£µë£Œ!! ë©”ì¸í™”ë©´ìœ¼ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.";
 					resetFontColor();
 					Sleep(2000);
 					DrawtitleVie();
@@ -311,12 +311,12 @@ void playGame(int life, int score) { //ÀÎ°ÔÀÓ
 				}
 			}			
 		}
-		if (!ok) { //¿À´äÀÏ½Ã
+		if (!ok) { //ì˜¤ë‹µì¼ì‹œ
 			Gamebeep();
 			gotoxy(26, 19);
 			setFontColor(CC_RED);
 			cout<<"false       ";
-			life--;
+			life--; 
 			score -= 3;
 			if (life == 0) {
 				free(pNums);
@@ -326,7 +326,7 @@ void playGame(int life, int score) { //ÀÎ°ÔÀÓ
 				return;
 			}	
 		}
-		else if (ok == true) { //Á¤´äÀÏ½Ã
+		else if (ok == true) { //ì •ë‹µì¼ì‹œ
 			gotoxy(26, 19);
 			setFontColor(CC_GREEN);
 			cout<<"true         ";
@@ -340,7 +340,7 @@ void playGame(int life, int score) { //ÀÎ°ÔÀÓ
 	}
 }
 
-void moveww() { //Á¦¸ñ ±×¸®±â
+void moveww() { //ì œëª© ê·¸ë¦¬ê¸°
 	DrawtitleLinie();
 	setFontColor(CC_CYAN);
 	char Re[] = { '  T','Y','P','I','N','G',' ', 'F','A','S','T', ' ' ,'G','A','M','E' };
